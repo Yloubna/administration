@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
+<div class="clearfix"></div>
+<div class="dt-buttons btn-group">
+  <a class="btn btn-default buttons-print btn-sm" onclick="window.print();">
+    <span>Print</span>
+  </a>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Attestation d'inscription </h2>
+        
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <div class="row">
+          
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+           
+            <p>L'étudiant(e)</p>
+            <h3>{{etudiant.nom}} {{etudiant.prenom}}</h3>
+            <p>né(e) le {{etudiant.date_naiss}} </p>
+            <br>
+            <p>est inscrit(e) en en
+              <strong>{{etudiant.parcours}}</strong> 
+              à l'Université Oran 1 Ahmed Ben Bella
+            </p> 
+            <br>
+            <p> pour l'année scolaire <strong id="date"> </strong> <script>	// date
+              n =  new Date();
+              y1 = n.getFullYear()-1;
+              y2 = n.getFullYear();
+              document.getElementById("date").innerHTML = y1 + "/" + y2 ;</script> </p> <br>
+            <p> en spécialité : <strong>{{etudiant.specialite}}</strong></p>
+            <br>
+           <p> du domaine : <strong>{{etudiant.domaine}}</strong></p> 
+            <br>
+           <p> de la filière : <strong>{{etudiant.filiere}}</strong> </p> 
+           <br>
+           <p>à la
+            <strong>Faculté des sciences exactes et appliquées</strong>
+          </p>
+          <br>
+          <p>Signature du chef de Département</p> <br> <br> <br>
+      </div>
+        </div>
+        {% endblock %}

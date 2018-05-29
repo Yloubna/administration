@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
+<div class="clearfix"></div>
+<div class="dt-buttons btn-group">
+  <a class="btn btn-default buttons-print btn-sm" onclick="window.print();">
+    <span>Print</span>
+  </a>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Diplôme de fin d'études </h2>
+       
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <div class="row">
+         
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            
+            <p>L'étudiant(e)</p>
+            <h3>{{etudiant.nom}} {{etudiant.prenom}}</h3>
+            <p>né(e) le {{etudiant.date_naiss}} </p>
+            <br>
+            <p>reçoit le présent Diplôme du parcours
+              <strong>{{etudiant.parcours}}</strong>
+            </p>
+            <br>
+            <p> le <strong id="date"> </strong> <script>	// date
+              n =  new Date();
+              y = n.getFullYear();
+              m = n.getMonth() + 1;
+              d = n.getDate();
+              document.getElementById("date").innerHTML = d + "/" + m + "/" + y;</script> </p> <br>
+            <p>en spéacilaité
+              <strong>{{etudiant.specialite}}</strong>
+            </p>
+            <br>
+            <p>de la filière
+              <strong>{{etudiant.filiere}}</strong>
+            </p>
+            <br>
+            <p>du domaine <strong>{{etudiant.domaine}}</strong>
+            </p>
+            <br>
+            <p>à la
+              <strong>Faculté des sciences exactes et appliquées</strong>
+            </p>
+            <br> <br>
+            <p> <a style="margin-right: 40%;">Signature du Recteur</a> <a >Signature du Doyen</a> </p> <br> <br> <br>
+          </div>
+        </div>
+       
+        {% endblock %}
+        
+        {% block js %} 
+        <script src="{% static 'js/pdfmake/build/pdfmake.min.js' %}"></script>
+       <script src="{% static 'js/pdfmake/build/vfs_fonts.js' %}"></script>
+       {% endblock %}

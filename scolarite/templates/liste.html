@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
+
+<div class="x_content">
+
+  <p>Liste des etudiants</p>
+
+
+  <table id="mytable" class="table table-striped projects">
+    <thead>
+      <tr>
+        <th style="width: 1%">#</th>
+        <th >Nom</th>
+        <th >Prénom</th>
+        <th>Date de Naissance</th>
+        <th>N°</th>
+        <th>Parcours</th>
+        <th>Modifier</th>
+        <th style="width: 30%">#Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for etudiant in etudiants %}
+      <tr>
+        <td>#</td>
+        <td>
+          <a>{{etudiant.nom}}</a>
+        </td>
+        <td>
+            <a>{{etudiant.prenom}}</a>
+          </td>
+        <td>
+            <p>{{etudiant.date_naiss}}</p>
+          </td>
+        <td>
+          <p>{{etudiant.num}}</p>
+        </td>
+        <td>
+          <p>{{etudiant.parcours}}</p>
+        </td>
+        <td> 
+          <a href=""> <button type="button" class="btn btn-info btn-xs js-update-etudiant" data-url="{% url 'update' etudiant.id %}">
+            <i class="fa fa-pencil"></i>Edit</button></a>
+        </td>
+        <td>
+          <a href="" class="btn btn-primary btn-xs">
+            <i class="fa fa-folder"></i> Relevé </a>
+          <a href="{% url 'diplome' etudiant.id %}" class="btn btn-primary btn-xs">
+            <i class="fa fa-folder"></i> Diplôme </a>
+          <a href="{% url 'attestation' etudiant.id %}" class="btn btn-primary btn-xs">
+            <i class="fa fa-folder"></i> Attestation </a>
+          <a href="{% url 'delete' etudiant.id %}" class="btn btn-danger btn-xs">
+            <i class="fa fa-close"></i> Supprimer </a>
+        </td>
+      </tr>
+      {% empty %}
+        <tr>
+          <td colspan="10" class="text-center bg-warning">Aucun Etudiant dans la liste</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- THE MODAL WE WILL BE USING -->
+  <div class="modal fade" id="modal-etudiant">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+      </div>
+
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/etudiants.js' %}"></script>
+{% endblock %}

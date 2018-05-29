@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Vos activités <small>récentes</small> </h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Ajouter une activité</a>
+                </li>
+                <li><a href="#">Supprimer une activité</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="clearfix"></div>
+          
+        </div>
+        <div class="x_content">
+          <div class="dashboard-widget-content">
+
+            <ul class="list-unstyled timeline widget">
+              <li>
+                <div class="block">
+                  <div class="block_content">
+                    <h2 class="title">
+                      <a>Liste des étudiants L1 a été mise à jours</a>
+                    </h2>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="block">
+                  <div class="block_content">
+                    <h2 class="title">
+                      <a>Les groupes L2 ont été créés</a>
+                    </h2>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="block">
+                  <div class="block_content">
+                    <h2 class="title">
+                      <a>Le pv final des L3 a été fait</a>
+                    </h2>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="block">
+                  <div class="block_content">
+                    <h2 class="title">
+                      <a>L'attestation de réinscription de l'étudiant <a href=""> N°713456 </a> est prête</a>
+                    </h2>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+
+
+
+      <div class="row">
+
+       <div class="row">
+
+
+        <!-- Start to do list -->
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>To Do List <small>tâches</small></h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Ajouter une tâche</a>
+                    </li>
+                    <li><a href="#">Supprimer une tâche</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+              <div class="">
+                <ul class="to_do">
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Préparer le pv final des M1 </p>
+                  </li>
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Mettre à jour la liste des étudiants L2</p>
+                  </li>
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Préparer les Relevés de Notes de tous les étudiants</p>
+                  </li>
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Créer les diplômes</p>
+                  </li>
+                  <li>
+                    <p>
+                      <input type="checkbox" class="flat"> Créer les groupes pour les L1 </p>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End to do list -->
+        
+        <!-- start of Daily users activities -->
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Activités <small>de vos collègues</small>  </h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="">
+                <div>
+                 
+                  <ul class="list-unstyled top_profiles scroll-view">
+                    <li class="media event">
+                      <a class="pull-left border-aero profile_thumb">
+                        <i class="fa fa-user aero"></i>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#">Mr. Amir Ben</a>
+                        <p> Les diplômes Licence sont prêts </p>
+                        <p> <small>3 hours ago</small> </p>
+                      </div>
+                    </li>
+                    <li class="media event">
+                      <a class="pull-left border-green profile_thumb">
+                        <i class="fa fa-user green"></i>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#">Mme. Samira Ben</a>
+                        <p> Toutes les listes sont mise à jours </p>
+                        <p> <small>2 hours ago</small> </p>
+                      </div>
+                    </li>
+                    <li class="media event">
+                      <a class="pull-left border-blue profile_thumb">
+                        <i class="fa fa-user blue"></i>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#">Mr. Nacer Ben</a>
+                        <p> Le PV des L1 est en cours </p>
+                        <p> <small>3 hours ago</small> </p>
+                      </div>
+                    </li>
+                    <li class="media event">
+                      <a class="pull-left border-aero profile_thumb">
+                        <i class="fa fa-user aero"></i>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#">Ms. Mary Jane</a>
+                        <p> Les attestations du réinscription des étudiants L2 sont en cours  </p>
+                        <p> <small>1 hour ago</small> </p>
+                      </div>
+                    </li>
+                    <li class="media event">
+                      <a class="pull-left border-green profile_thumb">
+                        <i class="fa fa-user green"></i>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#">Ms. Mary Jane</a>
+                        <p> Les diplômes Master sont prêts </p>
+                        <p> <small>3 hours ago</small> </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
