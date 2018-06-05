@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
+
+<div class="x_content">
+
+  <p>Liste des etudiants</p>
+
+
+  <table id="mytable" class="table table-striped projects">
+    <thead>
+      <tr>
+        <th style="width: 1%">#</th>
+        <th >Nom</th>
+        <th >Prénom</th>
+        <th>Moyenne</th>
+        <th>Délibération</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for etudiant in etudiants %}
+      <tr>
+        <td>#</td>
+        <td>
+          <a>{{etudiant.nom}}</a>
+        </td>
+        <td>
+            <a>{{etudiant.prenom}}</a>
+          </td>
+        <td>
+            <p>{{etudiant.calcule_moy_generale}}</p>
+          </td>
+        <td>
+          <p>{% if etudiant.calcule_moy_generale < 10 %}
+                Ajourné(e)
+             {% else %}
+                Admis(e)
+             {% endif %}</p>
+        </td>
+     
+      </tr>
+      {% empty %}
+        <tr>
+          <td colspan="10" class="text-center bg-warning">Aucun Etudiant dans la liste</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from etudiants.views import liste, liste_with_filter, diplome, attestation, delete, EtudiantUpdate, releve_de_notes
+from etudiants.views import liste, liste_with_filter, diplome, attestation, delete, EtudiantUpdate, releve_de_notes, pv_deliberation
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^delete/(?P<id>[0-9]+)/$', delete, name='delete'),
     url(r'^update_etudiant/(?P<pk>[0-9]+)/$',
         EtudiantUpdate.as_view(), name='update_etudiant'),
+    url(r'^pv/$', pv_deliberation, name="pv"),
     url(r'^releve_de_notes/(?P<id>[0-9]+)/$', releve_de_notes, name='releve_de_notes')
 ]

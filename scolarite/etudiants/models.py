@@ -62,7 +62,8 @@ class Etudiant(models.Model):
     
     def calcule_moy_generale(self):
         sum = 0
-        nb_modules = len(self.moyennes.all())
+        totalcoef = 0
         for m in self.moyennes.all():
-            sum+=m.value
-        return sum/float(nb_modules)
+            sum+=(m.value)*m.module.coef
+            totalcoef+= m.module.coef
+        return sum/float(totalcoef)

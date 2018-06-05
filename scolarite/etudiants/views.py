@@ -64,3 +64,10 @@ def releve_de_notes(request, id):
     }
     return render(request=request, template_name='releve.html', context=context)
 
+def pv_deliberation(request):
+    etudiants = Etudiant.objects.all()
+    context = {
+        'etudiants': etudiants
+    }
+    return render(request, 'pv.html', context)
+
