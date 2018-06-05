@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
+
+<div class="x_content">
+
+  <p>Liste des moyenne pour l'etudiant {{ etudiant.nom }} {{ etudiant.prenom }}</p>
+
+  <table id="mytable" class="table table-striped projects">
+    <thead>
+      <tr>
+        <th style="width: 1%">#</th>
+        <th>Module</th>
+        <th>coefficient</th>
+        <th>Unité</th>
+        <th>Moyenne</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for moyenne in etudiant.moyennes.all %}
+      <tr>
+        <td>#</td>
+        <td>
+          <a>{{moyenne.module.label}}</a>
+        </td>
+        <td>
+            <a>{{moyenne.module.coef}}</a>
+          </td>
+        <td>
+            <p>{{moyenne.module.unite}}</p>
+          </td>
+        <td>
+          <p>{{moyenne.value}}</p>
+        </td>
+      </tr>
+      
+      {% empty %}
+        <tr>
+          <td colspan="10" class="text-center bg-warning">Aucun Résultat</td>
+        </tr>
+      {% endfor %}
+      <tr>
+        <td><p>Moyenne Générale</p></td> 
+        <td></td> <td></td> <td></td>
+        <td><p>{{ etudiant.calcule_moy_generale }}</p></td>  
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+{% endblock %}

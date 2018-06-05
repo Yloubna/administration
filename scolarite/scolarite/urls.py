@@ -16,19 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from django.conf import settings
-from django.conf.urls.static import static
 
-from etudiants.views import liste, liste_with_filter, diplome, attestation, delete, create, update
+from etudiants.views import liste, liste_with_filter, diplome, attestation, delete, EtudiantUpdate, releve_de_notes
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="acceuil.html"), name="acceuil"),
     url(r'^liste/$', liste, name="liste"),
-    url(r'^liste/create/$', create, name='create'),
-    url(r'^liste/(?P<pk>\d+)/update/$', update, name='update'),
     url(r'^liste/(?P<parcours>\w+)/$', liste_with_filter, name="liste"),
     url(r'^diplome/(?P<id>[0-9]+)/$', diplome, name="diplome"),
     url(r'^attestation/(?P<id>[0-9]+)/$', attestation, name="attestation"),
     url(r'^delete/(?P<id>[0-9]+)/$', delete, name='delete'),
+    url(r'^update_etudiant/(?P<pk>[0-9]+)/$',
+        EtudiantUpdate.as_view(), name='update_etudiant'),
+    url(r'^releve_de_notes/(?P<id>[0-9]+)/$', releve_de_notes, name='releve_de_notes')
 ]

@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
+<form  action="" method="post" class="form-horizontal form-label-left">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-success" >Edit</button> <a href="{% url 'liste' %}"><button class="btn btn-primary">Cancel</button></a> 
+</form>
+{% endblock %}
