@@ -24,7 +24,9 @@ def liste_with_filter(request, parcours):
     context = {
         'etudiants': etudiants
     }
-    return render(request, 'liste.html', context)
+    return render(request, 'listefiltred.html', context)
+  
+    
 
 
 def diplome(request, id):

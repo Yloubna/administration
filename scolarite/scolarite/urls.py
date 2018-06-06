@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="acceuil.html"), name="acceuil"),
     url(r'^liste/$', liste, name="liste"),
-    url(r'^liste/(?P<parcours>\w+)/$', liste_with_filter, name="liste"),
+    url(r'^liste/(?P<parcours>\w+)/$', liste_with_filter, name="listefiltred"),
     url(r'^diplome/(?P<id>[0-9]+)/$', diplome, name="diplome"),
     url(r'^attestation/(?P<id>[0-9]+)/$', attestation, name="attestation"),
     url(r'^delete/(?P<id>[0-9]+)/$', delete, name='delete'),

@@ -58,7 +58,7 @@ class Etudiant(models.Model):
     moyennes = models.ManyToManyField(Moyenne)
 
     def __str__(self):
-        return str(self.id)
+        return self.nom
     
     def calcule_moy_generale(self):
         sum = 0
